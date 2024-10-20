@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Pollo Loco </title>
+    <link rel="shortcut icon" href="./img/10_interface_icons/favicon.png" type="image/png">
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+
+<body onload="init()">
+
+    <div class="headline">
+        <h1>EL POLLO LOCO</h1>
+    </div>
+
+    <section id="fullscreen" class="content">
+
+        <div class="start-screen" id="startScreen">
+            <div class="start-buttons" id="startButtons">
+                <button onclick="startGame()" class="startGameButton">START</button>
+            </div>
+        </div>
+
+
+        <div id="controlButtons" class="control-buttons">
+            <button onclick="toggleInfoScreen(event)">
+                <img src="./img/10_interface_icons/info.PNG" alt="info">
+            </button>
+            <button onclick="toggleMusicVolume()">
+                <img id="soundIcon" src="./img/10_interface_icons/soundOff.png" alt="sound">
+            </button>
+            <button onclick="openFullscreen()">
+                <img id="fullscreenIcon" src="./img/10_interface_icons/fullscreen.png" alt="fullscreen">
+            </button>
+        </div>
+
+
+        <div id="infoScreen" class="info-screen d-none">
+
+            <span class="info-title">HOW TO PLAY</span>
+            <button class="info-close" onclick="closeInfoScreen()">
+            </button>
+
+            <div class="key-description-container">
+
+                <div class="key-description">
+                    <img src="./img/10_interface_icons/arrow_up.png" alt=""><span>JUMP</span>
+                </div>
+                <div class="key-description">
+                    <img src="./img/10_interface_icons/arrow_left.png" alt="">
+                    <span>MOVE LEFT</span>
+                </div>
+                <div class="key-description">
+                    <img src="./img/10_interface_icons/arrow_right.png" alt="">
+                    <span>MOVE RIGHT</span>
+                </div>
+                <div class="key-description">
+                    <img src="./img/10_interface_icons/space.png" alt="">
+                    <span>THROW</span>
+                </div>
+
+            </div>
+            <div class="legal-notice-container">
+                <a class="legal-notice" href="#"
+                    onclick="window.open('./legalNotice.html', '_blank'); return false;">LEGAL NOTICE</a>
+            </div>
+
+        </div>
+
+
+        <div class="mobile-play-panel d-none" id="mobilePlayPanel">
+            <div class="mobile-play-buttons-container">
+                <button class="mobile-play-button" id="buttonLeft">
+                    <img src="./img/10_interface_icons/arrow_left.png" alt="">
+                </button>
+                <button class="mobile-play-button mobile-play-button-right" id="buttonRight">
+                    <img src="./img/10_interface_icons/arrow_right.png" alt="">
+                </button>
+            </div>
+            <div class="mobile-play-buttons-container">
+                <button class="mobile-play-button" id="buttonUp">
+                    <img src="./img/10_interface_icons/arrow_up.png" alt="">
+                </button>
+                <button class="mobile-play-button" id="buttonSpace">
+                    <img src="./img/10_interface_icons/space.png" alt="">
+                </button>
+            </div>
+        </div>
+
+
+        <div id="portraitWarningMobile" class="portrait-warning d-none">
+            <div class="portrait-warning-icon">
+                <img src="./img/icons/rotate.png" alt="">
+                <div class="portrait-warning-text">
+                    ROTATE <br> YOUR <br> DEVICE
+                </div>
+            </div>
+        </div>
+
+
+        <div class="end-screen d-none" id="endScreen"></div>
+
+        <canvas id="canvas" width="720px" height="480px"></canvas>
+
+    </section>
+
+    <script src="./js/classes/drawable-object.class.js"></script>
+    <script src="./js/classes/movable-object.class.js"></script>
+    <script src="./js/classes/character.class.js"></script>
+    <script src="./js/classes/chicken.class.js"></script>
+    <script src="./js/classes/chick.class.js"></script>
+    <script src="./js/classes/endboss.class.js"></script>
+    <script src="./js/classes/coin.class.js"></script>
+    <script src="./js/classes/bottle.class.js"></script>
+    <script src="./js/classes/cloud.class.js"></script>
+    <script src="./js/classes/background-object.class.js"></script>
+    <script src="./js/classes/status-bar-life.class.js"></script>
+    <script src="./js/classes/status-bar-bottle.class.js"></script>
+    <script src="./js/classes/status-bar-coin.class.js"></script>
+    <script src="./js/classes/status-bar-endboss.class.js"></script>
+    <script src="./js/classes/world.class.js"></script>
+    <script src="./js/classes/keyboard.class.js"></script>
+    <script src="./js/classes/level.class.js"></script>
+    <script src="./js/classes/throwable-object.class.js"></script>
+    <script src="./levels/level1.js"></script>
+    <script src="./js/fullscreenHandler.js"></script>
+    <script src="./js/controlListeners.js"></script>
+    <script src="./js/game.js"></script>
+
+</body>
+
+</html>
