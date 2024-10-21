@@ -321,7 +321,7 @@ class Character extends MovableObject {
     if (!this.sleepTimer) {
       this.sleepTimer = setTimeout(() => {
         this.sleep = true;
-      }, 15000);
+      }, 5000);
     }
   }
 
